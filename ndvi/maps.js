@@ -85,8 +85,18 @@ function Lege() {
 			mymap.removeLayer(imag1);
 			mymap.removeLayer(imag2);
     }, 100);
-    		$("#legend").attr("src","ndvi_legend1.png");
-			$('#pruh1').html('CHKO Broumovsko<br>NDVI values');
+	
+	if ($("#legend").attr('src') == 'ndvi_legend.png') {
+	$( "#legend" ).slideUp(500);
+	$( "#pruh1" ).slideUp(500);
+	setTimeout(function() {
+		$("#legend").attr("src","ndvi_legend1.png");
+		$('#pruh1').html('CHKO Broumovsko<br>NDVI values');
+		$( "#legend" ).slideDown(200);
+		$( "#pruh1" ).slideDown(200);
+		}, 1000);
+	}
+	else {};
 			
 			
   		} else {
@@ -94,9 +104,16 @@ function Lege() {
 			mymap.removeLayer(imag3);
 			mymap.removeLayer(imag4);
     }, 100);
-			$("#legend").attr("src","ndvi_legend.png");
-			$('#pruh1').html('CHKO Broumovsko<br>NDVI change (2002 x 2009)');
-			
+			if ($("#legend").attr('src') == 'ndvi_legend1.png') {
+	$( "#legend" ).slideUp(500);
+	$( "#pruh1" ).slideUp(500);
+	setTimeout(function() {
+		$("#legend").attr("src","ndvi_legend.png");
+		$('#pruh1').html('CHKO Broumovsko<br>NDVI change (2002 x 2009)');
+		$( "#legend" ).slideDown(200);
+		$( "#pruh1" ).slideDown(200);
+		}, 1000);
   		}
-		});
+		else {};
+		}});
 		
