@@ -84,11 +84,11 @@
 		var imageBounds2 = [[50.4503372371785, 16.0159579072404], [50.6868941759074, 16.4635884133171]];
 		var imageBounds = [[50.4503474653879, 16.0159013754444], [50.6869043528921, 16.4635318815212]];
 		
-		var imag = L.imageOverlay('ndvi.png', imageBounds).addTo(mymap);
-		var imag1 = L.imageOverlay('ndvi1.png', imageBounds);
-		var imag2 = L.imageOverlay('ndvi2.png', imageBounds);
-		var imag3 = L.imageOverlay('ndvi_2002.png', imageBounds1);
-		var imag4 = L.imageOverlay('ndvi_2009.png', imageBounds);
+		var imag = L.imageOverlay('ndvi.png', imageBounds, {attribution: "USGS, ArcData"}).addTo(mymap);
+		var imag1 = L.imageOverlay('ndvi1.png', imageBounds, {attribution: "USGS, ArcData"});
+		var imag2 = L.imageOverlay('ndvi2.png', imageBounds, {attribution: "USGS, ArcData"});
+		var imag3 = L.imageOverlay('ndvi_2002.png', imageBounds1, {attribution: "USGS, ArcData"});
+		var imag4 = L.imageOverlay('ndvi_2009.png', imageBounds, {attribution: "USGS, ArcData"});
 		
 		
 		var baseLayers = {
