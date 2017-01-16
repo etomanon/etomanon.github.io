@@ -80,15 +80,15 @@
 		}}).addTo(mymap);
 		mymap.fitBounds(gj.getBounds());
 
-		var imageBounds = [[49.3108947308836, 15.04658588414699], [51.26247611000699, 17.05188046748766]];
+		var imageBounds = [[50.4455562602026, 16.0107097887538], [50.6917997995941, 16.4710668144399]];
 		var imageBounds1 = [[49.2792331476808, 15.046585884147], [51.2867547055534, 18.4829113404894]];
 		var imageBounds2 = [[49.2569092711157, 13.561075198531], [51.2624861616306, 17.0521080556763]];
 		
 		var imag = L.imageOverlay('ndvi.png', imageBounds).addTo(mymap);
 		var imag1 = L.imageOverlay('ndvi1.png', imageBounds);
 		var imag2 = L.imageOverlay('ndvi2.png', imageBounds);
-		var imag3 = L.imageOverlay('ndvi_2002.png', imageBounds1);
-		var imag4 = L.imageOverlay('ndvi_2009.png', imageBounds2);
+		var imag3 = L.imageOverlay('ndvi_2002.png', imageBounds);
+		var imag4 = L.imageOverlay('ndvi_2009.png', imageBounds);
 		
 		
 		var baseLayers = {
