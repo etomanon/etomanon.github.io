@@ -7,36 +7,38 @@
     <meta name="viewport" content="width=device-width, initialscale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<link href="ndvi.css" rel="stylesheet" />
-	
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link href="ndvi.css" rel="stylesheet" />
+
 
 </head>
+
 <body>
 
-			<div id="mapid"></div>
-			<div id="pruh1">CHKO Broumovsko<br>NDVI change (2002 x 2009)</div>
-			<span id="pruh">NDVI layer transparency</span>
-			<input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" /><br>
-			<div id="leg"><img src="ndvi_legend.png" id="legend"></div>
-			<button id="dshp" class="button1" onclick="Lege()">i</button>
-			<div id="chartContainer">
-			<canvas id="cart">
+    <div id="mapid"></div>
+    <div id="pruh1">CHKO Broumovsko<br>NDVI change (2002 x 2009)</div>
+    <span id="pruh">NDVI layer transparency</span>
+    <input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" /><br>
+    <div id="leg"><img src="ndvi_legend.png" id="legend"></div>
+    <button id="dshp" class="button1" onclick="Lege()">i</button>
+    <div id="chartContainer">
+        <canvas id="cart">
 				</canvas> </div>
-			
 
-			<div id="chartContainer1">
-			<canvas id="cart1">
-				</canvas> </div>
-			
 
-			<div id="chartContainer2">
-			<canvas id="cart2">
+    <div id="chartContainer1">
+        <canvas id="cart1">
 				</canvas> </div>
-				
-<script src="maps.js"></script>
-<script src="chart.js"></script>
+
+
+    <div id="chartContainer2">
+        <canvas id="cart2">
+				</canvas> </div>
+
+    <img src="ndvi_legend1.png" style="visibility: hidden">
+    <script src="maps.js"></script>
+    <script src="chart.js"></script>
 </body>
 
 

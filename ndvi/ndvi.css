@@ -290,4 +290,8 @@ input[type=range]:focus::-ms-fill-upper {
 	height: 14%;
 	width: 34%
 }
+
+.button1 {
+	font-size: 2vw;
+}
 }
