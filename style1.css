@@ -12,8 +12,21 @@ img {
 }
 
 .navbar-default {
+	background-color: #36A2EB;
+	color: white;
 	
-	
+}
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-toggle {
+	border: 1px solid white
 }
 
 .btn-info {
