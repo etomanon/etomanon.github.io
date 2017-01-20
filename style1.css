@@ -1,21 +1,64 @@
+body {
+	padding-top: 50px;
+}
+
+
+
 h1 {
-	text-align: center
+	
+	text-align: center;
+	color: white !important;
+	font-size: 18px !important;
+	background-color: #36A2EB;
+	padding-bottom: 5px !important;
+	padding-top: 5px !important;
+	border-radius: 12px !important;
+	margin-top: 0px !important;
 	}
 p {
-		text-align: center;
-		color: black
-	}
+		text-align: justify;
+		color: black;
+		padding-top: 5px !important;
+		padding-left: 10px !important;
+		padding-right: 10px !important;
+		line-height: 110% !important;
+		font-size: 100% !important;
+}
 	
 img {
+	
 	cursor: pointer;
-	max-width: 50%
+	max-width: 50%;
+	padding-left: 1px !important;
+	padding-right: 1px !important;
+	border-radius: 12px !important;
+}
+
+.whole:-webkit-any-link {
+	
+    color: -webkit-link;
+    text-decoration: none;
+    cursor: auto;
+
 }
 
 .navbar-default {
 	background-color: #36A2EB;
 	color: white;
+	-webkit-transition: box-shadow 0.5s;
+	transition: box-shadow 0.5s;
+	border: 0px;
+}
+
+.navbar-default:hover {
+	
+	-webkit-box-shadow: 0px 7px 15px -5px rgba(54,162,235,1);
+	-moz-box-shadow: 0px 7px 15px -5px rgba(54,162,235,1);
+	box-shadow: 0px 7px 15px -5px rgba(54,162,235,1);
 	
 }
+
+
 
 .navbar-default .navbar-brand {
     color: white;
@@ -41,5 +84,20 @@ img {
 	padding-left: 5px !important;
 	padding-right: 5px !important;
 	padding-bottom: 5px !important;
-	border: 1px dashed black;
+	padding-top: 10px !important;
+	-webkit-box-shadow: 0px 3px 22px -5px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 3px 22px -5px rgba(0,0,0,1);
+	box-shadow: 0px 3px 22px -5px rgba(0,0,0,1);
+	border-radius: 12px !important;
+	margin-top: 45px !important;
+	-webkit-transition: margin 0.5s, box-shadow 0.5s;
+	transition: margin 0.5s, box-shadow 0.5s;
+}
+
+.jumbotron:hover{
+	margin-top: 15px !important;
+	-webkit-box-shadow: 0px 3px 30px -5px rgba(0,0,0,1);
+	-moz-box-shadow: 0px 3px 30px -5px rgba(0,0,0,1);
+	box-shadow: 0px 3px 30px -5px rgba(0,0,0,1);
+
 }
