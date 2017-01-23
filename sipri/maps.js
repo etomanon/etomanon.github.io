@@ -2,7 +2,7 @@ var mymap = L.map('mapid')
 
 
 var stamen = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/toner/{z}/{x}/{y}.{ext}', {
-	attribution: '<a href="http://stamen.com">Stamen Design</a>',
+	attribution: 'Stamen, SIPRI',
 	subdomains: 'abcd',
 	minZoom: 0,
 	maxZoom: 20,
@@ -62,7 +62,11 @@ function resetHighlight(e) {
 }
 
 function zoomToFeature(e) {
+	var layer = e.target;
     mymap.fitBounds(e.target.getBounds());
+	myLineChart.destroy();
+	chartUpdate(layer.feature.properties);
+	
 }
 
 function onEachFeature(feature, layer) {
@@ -74,20 +78,47 @@ function onEachFeature(feature, layer) {
 }
 
 
+function chartUpdate (props) {
+	lab = [];
+	pubs = [];
+	for (var i = 2; i < 30; i++) {
+		if (eval("props.F" + i) == 0) {
+			continue;
+		}
+		
+		var fet = data.value[i - 2]
+		lab.push(fet)
+        var fets = eval("props.F" + i)
+        pubs.push(fets)
+		
+	}	
+	createChart(eval("props.NAME"))
+}
+
 var info = L.control();
 
 info.onAdd = function (mymap) {
-    this._div = L.DomUtil.create('div', 'info'); // create a div with a class "info"
+    this._div = L.DomUtil.create('div', 'info'); 
     this.update();
     return this._div;
 };
 
-// method that we will use to update the control based on feature properties passed
+
 info.update = function (props) {
 	var chan = $("#ttime").val();
-    this._div.innerHTML = '<h4>Military spending</h4>' +  (props ?
-        '<b>' + props.NAME + '</b><br />' + eval("props.F" + chan) + ' % of GDP'
-        : 'Hover over a state');
+	var tema = $("#sliderStatus").html();
+	if ((props)) {
+		if ((eval("props.F" + chan) == 0)) {
+			uva = 'Unknown'
+		} else {
+			uva = eval("props.F" + chan)
+		}
+	} else {
+		
+	}
+    this._div.innerHTML = (props ?
+        '<b>' + props.NAME + ' - ' + tema + '</b><br />' + uva + ' % of GDP'
+        : 'Click on a state<br>to create its chart!');
 };
 
 info.addTo(mymap);
@@ -143,11 +174,11 @@ legend.onAdd = function (mymap) {
         grades = [0, 0.75, 1.5, 2, 2.5, 3, 3.5],
         labels = [];
 
-    // loop through our density intervals and generate a label with a colored square for each interval
+    
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
             '<i style="background:' + getColor(grades[i] + 1) + '";color="black"></i> ' +
-            grades[i] + (grades[i + 1] ? '&ndash;' + grades[i + 1] + ' % <br>' : '+ %');
+            grades[i] + (grades[i + 1] ? ' - ' + grades[i + 1] + ' % <br>' : '+ %');
 			
     }
 
@@ -182,7 +213,7 @@ function Play1(newval) {
     if (yplay) {} else {
         return
     }
-    if ($("#ttime").val() != (newval - 1)) {
+    if ($("#ttime").val() != (newval - 1)) {		
         return
     }
     $("#ttime").val(newval);
@@ -192,7 +223,7 @@ function Play1(newval) {
         setTimeout(function() {
             Play1(nnw)
         }, 1000);
-    }
+    } else {Stop()}
 };
 
 function Stop() {
@@ -201,3 +232,35 @@ function Stop() {
     $("#pbut").css("background-color", "white");
     $("#pbut").css("color", "black");
 };
+
+
+var OpacityControl =  L.Control.extend({
+
+  options: {
+    position: 'topleft'
+  },
+
+  onAdd: function (map) {
+    container = L.DomUtil.create('div', 'leaflet-control-custom');
+	
+	container.innerHTML = '<input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" />'; 
+    
+    container.style.width = '40px';
+    container.style.height = '35px';
+	container.style.marginLeft = '0px';
+	container.style.marginTop = '50px';
+
+    return container;
+  }
+});
+
+mymap.addControl(new OpacityControl());
+
+container.addEventListener('mouseover', function () {
+        mymap.dragging.disable();
+    });
+
+    // Re-enable dragging when user's cursor leaves the element
+    container.addEventListener('mouseout', function () {
+        mymap.dragging.enable();
+    });

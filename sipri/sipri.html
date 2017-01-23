@@ -11,6 +11,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
     <link href="sipri.css" rel="stylesheet" />
+	<link rel="icon" type="image/png" href="icon.png">
 
 
 </head>
@@ -19,16 +20,17 @@
 
     <div id="mapid"></div>
     <div id="pruh">Military spending<br><span id="sliderStatus">1988</span></div>
-	<div id="pruh1">Transparency<br>
-    <input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" /></div>
+	
+   <!-- <input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" /> -->
 	<input id="ttime" type="range" min="2" max="29" value="2" step="1" oninput="times(this.value)" />
 	 <button id="pbut" class="buttonx" onclick="Play()" style="font-weight: bold;">></button>
     <div id="chartContainer">
         <canvas id="cart">
 				</canvas> </div>
 
+	<script src="chart.js"></script>
     <script src="maps.js"></script>
-    <script src="chart.js"></script>
+   
 </body>
 
 

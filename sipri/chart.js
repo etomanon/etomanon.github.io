@@ -18,10 +18,12 @@ for (var p = 0; p < data.value.length; p++) {
 
 }
 
+function createChart(legen){
+
 datas = {
 	                        labels: lab,
 	                        datasets: [{
-	                            label: "Mean [%]",
+	                            label: legen,
 	                            fill: true,
 	                            lineTension: 0,
 	                            backgroundColor: "rgba(45, 160, 226,0.4)",
@@ -43,20 +45,25 @@ datas = {
 	                            spanGaps: true,
 	                        }]
 	                    };
-	                    var myLineChart = new Chart(ctx, {
+						
+						myLineChart = new Chart(ctx, {
 	                        type: 'line',
 	                        data: datas,
 	                        options: {
 	                            responsive: true,
 	                            maintainAspectRatio: false,
 	                            legend: {
-	                                display: false
+	                                display: true
 	                            },
 	                            scales: {
 
 
 	                                xAxes: [{
-	                                    display: false
+	                                    display: true,
+										ticks: {
+											autoSkip:true,
+											maxTicksLimit:10
+										}
 	                                }],
 	                                yAxes: [{
 	                                    display: false,
@@ -69,3 +76,11 @@ datas = {
 	                            }
 	                        }
 	                    });
+						
+						
+	
+						
+						
+		
+};
+createChart("World mean [%]");

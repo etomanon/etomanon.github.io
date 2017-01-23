@@ -127,5 +127,12 @@ img {
   min-width: 100% !important;
   min-height: 100% !important;
   background: url("wall.jpg") no-repeat;
+   -webkit-filter: blur(1px), grayscale(100%);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: grayscale(50%);;
+  /*-webkit-filter: grayscale(100%);
+    filter: grayscale(100%);*/
   
 }
