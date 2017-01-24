@@ -53,7 +53,7 @@ datas = {
 	                            responsive: true,
 	                            maintainAspectRatio: false,
 	                            legend: {
-	                                display: true
+	                                display: false
 	                            },
 	                            scales: {
 
