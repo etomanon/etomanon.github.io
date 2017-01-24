@@ -67,6 +67,7 @@ function zoomToFeature(e) {
 	myLineChart.destroy();
 	chartUpdate(layer.feature.properties);
 	
+	
 }
 
 function onEachFeature(feature, layer) {
@@ -173,7 +174,7 @@ legend.onAdd = function (mymap) {
     var div = L.DomUtil.create('div', 'info legend'),
         grades = [0, 0.75, 1.5, 2, 2.5, 3, 3.5],
         labels = [];
-
+		//div.innerHTML = 'id="legendary"'
     
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
@@ -264,3 +265,23 @@ container.addEventListener('mouseover', function () {
     container.addEventListener('mouseout', function () {
         mymap.dragging.enable();
     });
+	
+	
+var hideLegends =  L.Control.extend({
+
+  options: {
+    position: 'bottomright'
+  },
+
+  onAdd: function (map) {
+    container1 = L.DomUtil.create('div', 'leaflet-control-custom');
+	container1.innerHTML = '<button onclick="$(&quot;.info.legend&quot;).slideToggle(&quot;slow&quot;)" style="font-weight: bold; cursor: pointer;">X</button>'; 
+    
+    container1.style.width = '10px';
+    container1.style.height = '10px';
+
+    return container1;
+  }
+});
+
+mymap.addControl(new hideLegends());
