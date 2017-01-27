@@ -62,6 +62,13 @@ function zoomToFeature(e) {
 	
 }
 
+function zoomToMarker(e) {
+	var feat = e.target;
+    mymap.setView(feat.getLatLng(), 18, {animate: true});
+	
+	
+}
+
 function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
@@ -192,26 +199,32 @@ var current_position, atm_position
 		
       current_position = L.marker(e.latlng, {icon: myIcon1}).addTo(mymap).bindPopup("Your position!").openPopup();
 	  lgeo= current_position.toGeoJSON()
-	  mymap.setView(current_position.getLatLng(), 16);
+	  //mymap.setView(current_position.getLatLng(), 16);
 	  var nearest1 = turf.nearest(lgeo, euc);
-	  
+	 current_position.on("click", zoomToMarker)
+	  var features = turf.featureCollection([lgeo, nearest1])
+
+	  var bbox = turf.bbox(features);
+		var bounds1 = [bbox[1], bbox[0]]
+		var bounds2 = [bbox[3], bbox[2]]
+		
 	  var swap = [nearest1.geometry.coordinates[1], nearest1.geometry.coordinates[0]]
 	  var distance = Math.round(turf.distance(lgeo, nearest1) * 1000);
 	  atm_position = L.marker(swap, {icon: myIcon}).addTo(mymap).bindPopup("The nearest ATM!<br>Distance: " + distance + " meters<br>" + nearest1.properties.name);
-      
-      setTimeout(function() {
-        mymap.panTo(swap, {animate: true, duration: 0.65});
-    }, 2000);
+      atm_position.on("click", zoomToMarker)
 	setTimeout(function() {
-        mymap.setZoom(18);
-    }, 2650);
+        mymap.fitBounds([bounds1, bounds2]);
+		setTimeout(function() {
+		mymap.setZoom(mymap.getZoom() - 1)
+		}, 100);
+    }, 500);
 	setTimeout(function() {
         atm_position.openPopup()
 		mymap._handlers.forEach(function(handler) {
     handler.enable();
 
 });
-    }, 2650);
+    }, 500);
     }
 
     function onLocationError(e) {
@@ -346,26 +359,31 @@ function onMapClick(e) {
 		  mymap.removeLayer(atm_position);
       }
     pointer_position = L.marker(e.latlng, {icon: pointi}).addTo(mymap).bindPopup("You clicked here!").openPopup();
-	
+	pointer_position.on("click", zoomToMarker)
 	pgeo= pointer_position.toGeoJSON()
-	  mymap.setView(pointer_position.getLatLng(), 16);
+	  //mymap.setView(pointer_position.getLatLng(), 16);
 	  var nearest2 = turf.nearest(pgeo, euc);
-	  
+	  	  var features = turf.featureCollection([pgeo, nearest2])
+
+	  var bbox = turf.bbox(features);
+		var bounds1 = [bbox[1], bbox[0]]
+		var bounds2 = [bbox[3], bbox[2]]
 	  var swap = [nearest2.geometry.coordinates[1], nearest2.geometry.coordinates[0]]
 	  var distance = Math.round(turf.distance(pgeo, nearest2) * 1000);
 	  atm_position = L.marker(swap, {icon: myIcon}).addTo(mymap).bindPopup("The nearest ATM!<br>Distance: " + distance + " meters<br>" + nearest2.properties.name);
-      setTimeout(function() {
-        mymap.panTo(swap, {animate: true, duration: 0.65});
-    }, 2000);
+		atm_position.on("click", zoomToMarker)
 	setTimeout(function() {
-        mymap.setZoom(18);
-    }, 2650);
+        mymap.fitBounds([bounds1, bounds2]);
+		setTimeout(function() {
+		mymap.setZoom(mymap.getZoom() - 1)
+		}, 100);
+    }, 500);
 	setTimeout(function() {
         atm_position.openPopup()
 		mymap._handlers.forEach(function(handler) {
     handler.enable();
 
 });
-    }, 2650);
+    }, 500);
 	
 }
