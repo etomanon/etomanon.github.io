@@ -2,21 +2,16 @@
 <html>
 
 <head>
-    <title>The nearest ATM</title>
+    <title>Heatmap of playgrounds</title>
 	<meta charset="UTF-8">
     <meta http-equiv="Content-type" content="text/html">
     <meta name="viewport" content="width=device-width, initialscale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.2/leaflet.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script src="leaflet-heatmap.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-	<script src='https://npmcdn.com/@turf/turf/turf.min.js'></script>
-	<script src='leaflet.markercluster.js'></script>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet-geosearch@latest/assets/css/leaflet.css" />
-	<script type="text/javascript" src="https://unpkg.com/leaflet-geosearch@latest/dist/bundle.min.js" charset="utf-8"></script>
-	<link href="MarkerCluster.Default.css" rel="stylesheet" />
-	<link href="MarkerCluster.css" rel="stylesheet" />
-    <link href="atm.css" rel="stylesheet" />
+    <link href="play.css" rel="stylesheet" />
 	<link rel="icon" type="image/png" href="icon.png">
 
 
@@ -25,9 +20,8 @@
 <body>
 
     <div id="mapid"></div>
-    <div id="pruh">The nearest ATM<br></div>
+    <div id="pruh">Heatmap of playgrounds<br></div>
 	
-   <div id="tooltip">Click on the map to choose a position!</div>
 	<script src="euc.js"></script>
     <script src="maps.js"></script>
    

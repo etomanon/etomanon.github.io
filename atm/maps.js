@@ -12,8 +12,8 @@ var geojsonMarkerOptions = {
     fillColor: "#ff7800",
     color: "#000",
     weight: 1,
-    opacity: 1,
-    fillOpacity: 1
+    opacity: 0,
+    fillOpacity: 0
 };
 
 
@@ -29,12 +29,13 @@ mymap.fitBounds(gj.getBounds());
 
 function highlightFeature(e) {
     var layer = e.target;
+	var opa = $("#opac").val();
 	info.update(layer.feature.properties);
     layer.setStyle({
         weight: 2,
         color: 'white',
         dashArray: '',
-        fillOpacity: 1
+        fillOpacity: opa,
     });
 
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
@@ -43,14 +44,15 @@ function highlightFeature(e) {
 }
 
 function resetHighlight(e) {
+	var opa = $("#opac").val();
 	var layer = e.target;
 	layer.setStyle({
         radius: 8,
 		fillColor: "#ff7800",
 		color: "#000",
 		weight: 1,
-		opacity: 1,
-		fillOpacity: 1
+		opacity: opa,
+		fillOpacity: opa
     });
 	info.update();
 }
@@ -73,7 +75,7 @@ function onEachFeature(feature, layer) {
     layer.on({
         mouseover: highlightFeature,
         mouseout: resetHighlight,
-        click: zoomToFeature
+        //click: zoomToFeature
     });
 }
 
@@ -163,7 +165,7 @@ var OpacityControl =  L.Control.extend({
   onAdd: function (map) {
     container = L.DomUtil.create('div', 'leaflet-control-custom');
 	
-	container.innerHTML = '<input id="opac" type="range" min="0" max="1" value="1" step="0.1" oninput="opacit(this.value)" />'; 
+	container.innerHTML = '<input id="opac" type="range" min="0" max="1" value="0" step="0.1" oninput="opacit(this.value)" />'; 
     
     container.style.width = '40px';
     container.style.height = '35px';
@@ -200,7 +202,8 @@ var current_position, atm_position
       current_position = L.marker(e.latlng, {icon: myIcon1}).addTo(mymap).bindPopup("Your position!").openPopup();
 	  lgeo= current_position.toGeoJSON()
 	  //mymap.setView(current_position.getLatLng(), 16);
-	  var nearest1 = turf.nearest(lgeo, euc);
+	  var filtered = gj.toGeoJSON()
+	  var nearest1 = turf.nearest(lgeo, filtered);
 	 current_position.on("click", zoomToMarker)
 	  var features = turf.featureCollection([lgeo, nearest1])
 
@@ -215,7 +218,7 @@ var current_position, atm_position
 	setTimeout(function() {
         mymap.fitBounds([bounds1, bounds2]);
 		setTimeout(function() {
-		mymap.setZoom(mymap.getZoom() - 1)
+		mymap.setZoom(mymap.getZoom() - 2)
 		}, 100);
     }, 500);
 	setTimeout(function() {
@@ -362,7 +365,8 @@ function onMapClick(e) {
 	pointer_position.on("click", zoomToMarker)
 	pgeo= pointer_position.toGeoJSON()
 	  //mymap.setView(pointer_position.getLatLng(), 16);
-	  var nearest2 = turf.nearest(pgeo, euc);
+	var filtered = gj.toGeoJSON()
+	  var nearest2 = turf.nearest(pgeo, filtered);
 	  	  var features = turf.featureCollection([pgeo, nearest2])
 
 	  var bbox = turf.bbox(features);
@@ -375,7 +379,7 @@ function onMapClick(e) {
 	setTimeout(function() {
         mymap.fitBounds([bounds1, bounds2]);
 		setTimeout(function() {
-		mymap.setZoom(mymap.getZoom() - 1)
+		mymap.setZoom(mymap.getZoom() - 2)
 		}, 100);
     }, 500);
 	setTimeout(function() {
@@ -387,3 +391,97 @@ function onMapClick(e) {
     }, 500);
 	
 }
+
+function klik1() {
+	if (mymap.hasLayer(markers)) {
+		mymap.removeLayer(markers)
+		
+	}
+	else {
+		mymap.addLayer(markers)
+		
+	}
+	
+}
+
+
+var cluster =  L.Control.extend({
+
+  options: {
+    position: 'topright'
+  },
+
+  onAdd: function (map) {
+    container6 = L.DomUtil.create('div', 'leaflet-control-custom');
+	
+	container6.innerHTML = '<div id="obr1" style="opacity: 1; padding: 5px 5px; background-color: #ff7800; text-align: center; color: white; width: 100%; height: 100%; cursor: pointer" onclick="klik1();" />CLUSTERS<br>ON / OFF</div>'; 
+    
+    container6.style.width = '70px';
+    container6.style.height = '35px';
+	container6.style.marginRight = '15px';
+	container6.style.marginTop = '10px';
+
+    return container6;
+  }
+});
+
+mymap.addControl(new cluster());
+
+
+var markers = L.markerClusterGroup({showCoverageOnHover: false});
+markers.addLayer(gj);
+
+mymap.addLayer(markers);
+
+
+
+
+var filtr =  L.Control.extend({
+
+  options: {
+    position: 'topright'
+  },
+
+  onAdd: function (map) {
+    container7 = L.DomUtil.create('div', 'leaflet-control-custom');
+	
+	container7.innerHTML = '<select id="choose">     <option value="all">All banks</option>     <option value="ČSOB">ČSOB</option>     <option value="KB">Komerční banka</option> 	<option value="Fio banka">Fio banka</option>  <option value="MONETA Money Bank">MONETA Money Bank</option></select>'
+	
+
+    
+
+    
+    container7.style.width = '100px';
+    container7.style.height = '45px';
+	container7.style.marginRight = '5px';
+	container7.style.marginTop = '25px';
+
+    return container7;
+  }
+});
+
+mymap.addControl(new filtr());
+$('#choose').change(function() {
+		var chose = ($('#choose').val())
+		mymap.removeLayer(gj)
+		gj = L.geoJson(euc, {
+		pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions);
+    },
+	onEachFeature: onEachFeature,
+	filter: function(feature, layer) {
+        if (chose == 'all') {return true}
+		else if (feature.properties.name == chose) { return true}
+		else {return false}
+    }
+        
+		}).addTo(mymap);
+	$("#opac").trigger("input");
+	markers.clearLayers()
+	if(mymap.hasLayer(markers)) {		
+		markers.addLayer(gj);
+	}
+	else{
+		markers.addLayer(gj);
+	}
+    }); 
