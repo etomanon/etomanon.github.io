@@ -231,7 +231,7 @@ var current_position, atm_position
     }
 
     function onLocationError(e) {
-      alert(e.message);
+      alert('Please enable geolocation on your device and reload the page.\n' + e.message);
     }
 
 mymap.on('locationfound', onLocationFound);

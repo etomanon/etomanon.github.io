@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bachelor's thesis</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="bachelor.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+	<link rel="icon" type="image/png" href="icon.png">
+</head>
+
+<body>
+
+<nav class="navbar navbar-default navbar-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+                <a class="navbar-brand" href="index.html">GIS Portfolio</a>
+            </div>
+			 <div class="collapse navbar-collapse" id="myNavbar">
+			<ul class="nav navbar-nav">
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="bachelor.html">Bachelor's thesis</a></li>
+      </ul>
+        </div>
+		</div>
+    </nav>
+	
+	<div class="jumbotron">
+	 <div class="container">
+  <h2>Analysis of open geospatial data and the concept of its application</h2>
+  <p>The thesis will analyze various sources of open geospatial data and propose their possible usage. 
+	A prototypic web application will be created for chosen data sets.
+	The main idea is to combine two sources: <a href="http://rodos.vsb.cz/Road.aspx?road=D2" target="_blank">RODOS</a> 
+	& <a href="http://www.dopravniinfo.cz/" target="_blank">Dopravní info</a>.
+	
+	The speed for certain sections of D2 will be gathered by python web crawler (<a href="d2.py" target="_blank">WIP script file here</a>) from RODOS.
+	Dopravní info shares information about traffic via XML files - accidents, road closures and other events.
+	PostgreSQL with PostGIS extension will serve as storage for extracted & transformed data.
+	Finally, GeoServer will be utilized for WMS & WFS (<a href="ajax.js" target="_blank">example of loading the data</a>) to display the data in the web map.
+	
+	
+	
+  
+  
+  </p>
+  </div>
+</div>
+
+
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+</html>

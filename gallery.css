@@ -1,0 +1,49 @@
+.item img {
+  width:100%
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
+
+.navbar-default {
+	background-color: #36A2EB;
+	color: white;
+	-webkit-transition: background-color 0.5s;
+	transition: background-color 0.5s, opacity 0.5s;
+	border: 0px;
+	opacity: 1 !important;
+}
+
+.navbar-default:hover {
+	
+	background-color: #5bb7f5;
+	opacity: 1 !important;
+	
+}
+
+.navbar-default .navbar-toggle {
+    border-color: white;
+}
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+    background-color: #5bb7f5;
+}
+
+
+.navbar-default .navbar-brand {
+    color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: white;
+}
+
+.navbar-toggle {
+	border: 1px solid white
+}
+
+
+.navbar-default .navbar-nav>li>a {
+    color: white;
+}

@@ -98,7 +98,7 @@ info.onAdd = function (mymap) {
 info.update = function (props) {
 	 
     this._div.innerHTML = (props ?
-        '<b>' + (props.name) + '</b>' : 'Click on a playground to get info!');
+        '<b>' + (props.name) + '</b>' : 'Click on a playground<br>to get info!');
 	if (props) {
 		if (props.name == null) {
 		this._div.innerHTML = '<b>Unknown playground</b>' }
