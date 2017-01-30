@@ -16,6 +16,15 @@ var geojsonMarkerOptions = {
     fillOpacity: 0
 };
 
+var geojsonMarkerOptions1 = {
+    radius: 0,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 0,
+    fillOpacity: 0
+};
+
 
 var gj = L.geoJson(euc, {
     pointToLayer: function (feature, latlng) {
@@ -24,6 +33,13 @@ var gj = L.geoJson(euc, {
 	onEachFeature: onEachFeature
         
 		}).addTo(mymap);
+		
+var gj1 = L.geoJson(euc, {
+    pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions1);
+    }  
+		}).addTo(mymap);
+		
 		
 mymap.fitBounds(gj.getBounds());
 
@@ -202,7 +218,7 @@ var current_position, atm_position
       current_position = L.marker(e.latlng, {icon: myIcon1}).addTo(mymap).bindPopup("Your position!").openPopup();
 	  lgeo= current_position.toGeoJSON()
 	  //mymap.setView(current_position.getLatLng(), 16);
-	  var filtered = gj.toGeoJSON()
+	  var filtered = gj1.toGeoJSON()
 	  var nearest1 = turf.nearest(lgeo, filtered);
 	 current_position.on("click", zoomToMarker)
 	  var features = turf.featureCollection([lgeo, nearest1])
@@ -365,7 +381,7 @@ function onMapClick(e) {
 	pointer_position.on("click", zoomToMarker)
 	pgeo= pointer_position.toGeoJSON()
 	  //mymap.setView(pointer_position.getLatLng(), 16);
-	var filtered = gj.toGeoJSON()
+	var filtered = gj1.toGeoJSON()
 	  var nearest2 = turf.nearest(pgeo, filtered);
 	  	  var features = turf.featureCollection([pgeo, nearest2])
 
@@ -429,7 +445,7 @@ mymap.addControl(new cluster());
 
 
 var markers = L.markerClusterGroup({showCoverageOnHover: false});
-markers.addLayer(gj);
+markers.addLayer(gj1);
 
 mymap.addLayer(markers);
 
@@ -464,6 +480,7 @@ mymap.addControl(new filtr());
 $('#choose').change(function() {
 		var chose = ($('#choose').val())
 		mymap.removeLayer(gj)
+		mymap.removeLayer(gj1)
 		gj = L.geoJson(euc, {
 		pointToLayer: function (feature, latlng) {
         return L.circleMarker(latlng, geojsonMarkerOptions);
@@ -476,12 +493,24 @@ $('#choose').change(function() {
     }
         
 		}).addTo(mymap);
+		
+	gj1 = L.geoJson(euc, {
+		pointToLayer: function (feature, latlng) {
+        return L.circleMarker(latlng, geojsonMarkerOptions1);
+    },
+	filter: function(feature, layer) {
+        if (chose == 'all') {return true}
+		else if (feature.properties.name == chose) { return true}
+		else {return false}
+    }
+        
+		}).addTo(mymap);
 	$("#opac").trigger("input");
 	markers.clearLayers()
 	if(mymap.hasLayer(markers)) {		
-		markers.addLayer(gj);
+		markers.addLayer(gj1);
 	}
 	else{
-		markers.addLayer(gj);
+		markers.addLayer(gj1);
 	}
     }); 
