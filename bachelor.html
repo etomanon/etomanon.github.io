@@ -39,13 +39,14 @@
   <p>The thesis will analyze various sources of open geospatial data and propose their possible usage. 
 	A prototypic web application will be created for chosen data sets.
 	The main idea is to combine two sources: <a href="http://rodos.vsb.cz/Road.aspx?road=D2" target="_blank">RODOS</a> 
-	& <a href="http://www.dopravniinfo.cz/" target="_blank">Dopravní info</a>.
+	& <a href="http://aplikace.policie.cz/dopravni-informace/" target="_blank">Center for traffic data</a>.<br><br>
 	
-	The speed for certain sections of D2 will be gathered by python web crawler (<a href="d2.py" target="_blank">WIP script file here</a>) from RODOS.
-	Dopravní info shares information about traffic via XML files - accidents, road closures and other events.
+	The speed for certain sections of D2 will be gathered by python web crawler (<a href="scripts/d2_week.py" target="_blank">WIP script file here</a>) from RODOS.
+	Center for traffic data shares information about traffic via XML files - accidents, road closures and other events (<a href="scripts/nk.py" target="_blank">WIP script file here</a>).
 	PostgreSQL with PostGIS extension will serve as storage for extracted & transformed data.
-	Finally, GeoServer will be utilized for WMS & WFS (<a href="ajax.js" target="_blank">example of loading the data</a>) to display the data in the web map.
-	
+	Finally, GeoServer will be utilized for WMS & WFS (<a href="scripts/ajax.js" target="_blank">example of loading the data</a>) to display the data in the web map.
+	<br><div style="text-align: center">Work in progress</div>
+    <img src="bach.jpg" class="img-responsive" alt="Cinque Terre">
 	
 	
   
