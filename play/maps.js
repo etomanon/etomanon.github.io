@@ -1,9 +1,9 @@
 var mymap = L.map('mapid')
 
 var arra = []
-var osm = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	maxZoom: 19,
-	attribution: 'OpenStreetMap'
+var osm = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: 'OpenStreetMap'
 }).addTo(mymap);
 
 

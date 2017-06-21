@@ -3,110 +3,108 @@
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GIS Portfolio</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet" />
-	<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
-	<link rel="icon" type="image/png" href="icon.png">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="styles/index.css"  />
+    <link rel='stylesheet' media='(max-width: 1500px)' href='styles/index_m.css' />
+    <link rel='stylesheet' media='(max-width: 1200px)' href='styles/index_s.css' />
+    <link rel='stylesheet' media='(max-width: 500px)' href='styles/index_es.css' />
+    <link rel="icon" type="image/png" href="img/icon.png">
 </head>
 
 <body>
-
-<div src="wall.jpg" id="bg" alt="">
-</div>
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar" aria-expanded="false" aria-controls="navbar">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <a class="navbar-brand" href="index.html">GIS Portfolio</a>
+    <div src="img/wall.jpg" id="bg">
+    </div>
+    <div id="wel">
+        <h2>Where<br>Space<br>Matters<br>
+            <div id="compass">
+                <div id="pointer"></div>
             </div>
-			 <div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-        <li><a href="bachelor.html">Bachelor's thesis</a></li>
-      </ul>
+        </h2>
+    </div>
+    <div id="navd">
+        <ul>
+            <li id="hamb">&#9776;</li>
+            <li><a href="javascript:void(0);" class="navi" id="port">GIS Portfolio</a></li>
+            <li><a href="javascript:void(0);" class="navi" id="ba">Bachelor's thesis</a></li>
+        </ul>
+    </div>
+    <span id="her"></span>
+    <div class="item">
+        <a href="atm/atm.html" target="_blank" class="whole">
+            <div class="item2">
+
+                <h1>The nearest ATM</h1>
+                <img src="atm/atm_thumb.png">
+
+                <p class="lead">Find the nearest ATM in the Czech Republic. Leaflet, Turf.js, Leaflet-geosearch & Leaflet.markercluster.
+                    Source: Open Street Map (2017).</p>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="item">
+        <a href="play/play.html" target="_blank" class="whole">
+            <div class="item2">
+
+                <h1>Heatmap of playgrounds</h1>
+                <img src="play/play_thumb.png">
+
+                <p class="lead">Heatmap of all playgrounds in the Czech Republic. Leaflet, leaflet-heatmap.js. Source: Open Street Map (2017).</p>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="item">
+        <a href="sipri/sipri.html" target="_blank" class="whole">
+            <div class="item2">
+
+                <h1>Military spending</h1>
+                <img src="sipri/sipri_thumb.png">
+
+                <p class="lead">Worldwide evolution of military spending in % of GDP from 1988 to 2015. Leaflet & Chart.js. Data from SIPRI.</p>
+
+            </div>
+        </a>
+    </div>
+
+    <div class="item">
+        <a href="ndvi/ndvi.html" target="_blank" class="whole">
+            <div class="item2">
+
+                <h1>NDVI change</h1>
+                <img src="ndvi/ndvi_thumb.png">
+
+                <p class="lead">This map shows difference in NDVI for CHKO Broumovsko between 20. 6. 2002 and 14. 6. 2009. Leaflet & Chart.js.
+                    Data from Landsat 5.</p>
+
+            </div>
+        </a>
+    </div>
+    <div id="bach">
+        <div id="bachchild">
+            <h3>Analysis of open geospatial data and the concept of its application</h3>
+            <p id="bapa">This bachelor’s thesis studies issues of open spatial data. It describes definition of open data and its possible
+                geographic formats. It examines possibilities of sharing spatial data and covers main sources of open spatial
+                data in the Czech Republic. It also analyses chosen examples of commercial use of open spatial data abroad.
+                Finally, it suggests own prototypic application in the area of traffic data.<br><br>I have used 3 datasets
+                to cover the studied region of D2 highway - <a href="http://aplikace.policie.cz/dopravni-informace/" target="_blank">Police of the Czech Republic</a>,
+                <a href="http://rodos.vsb.cz/Road.aspx?road=D2" target="_blank">RODOS</a> and OpenStreetMap. I have formed
+                a data model and programmed scripts to get, transform and insert data into PostgreSQL database. After that,
+                I have connected the database to GeoServer. Thanks to that, I have created a web map. The thesis also lists
+                shortcomings of current traffic maps and proposes possible solutions.</p>
+            <br>
+            <a href="leaflet/index.html" target="_blank">
+                <div style="text-align: center; font-size: 75%;">Click for demo</div>
+                <img src="img/bach.jpg" id="bak">
+            </a>
         </div>
-		</div>
-    </nav>
-    <div class="container" id="top">
-        <div class="row">
-		
-		<div class="col-md-4">
-				<a href="atm/atm.html" target="_blank" class="whole">
-                <div class="jumbotron">
-                			
-					<h1>The nearest ATM</h1>
-                    <img src="atm/atm_thumb.png" class="img-responsive" alt="Cinque Terre">
-								
-                    <p class="lead">Find the nearest ATM in the Czech Republic. Leaflet, Turf.js, Leaflet-geosearch & Leaflet.markercluster. Source: Open Street Map (2017).</p>
-
-                </div>
-			</a>
-            </div>
-			
-		<div class="col-md-4">
-				<a href="play/play.html" target="_blank" class="whole">
-                <div class="jumbotron">
-                			
-					<h1>Heatmap of playgrounds</h1>
-                    <img src="play/play_thumb.png" class="img-responsive" alt="Cinque Terre">
-								
-                    <p class="lead">Heatmap of all playgrounds in the Czech Republic. Leaflet, leaflet-heatmap.js. Source: Open Street Map (2017).</p>
-
-                </div>
-			</a>
-            </div>
-		
-		<div class="col-md-4">
-				<a href="sipri/sipri.html" target="_blank" class="whole">
-                <div class="jumbotron">
-                			
-					<h1>Military spending</h1>
-                    <img src="sipri/sipri_thumb.png" class="img-responsive" alt="Cinque Terre">
-								
-                    <p class="lead">Worldwide evolution of military spending in % of GDP from 1988 to 2015. Leaflet & Chart.js. Data from SIPRI.</p>
-
-                </div>
-			</a>
-            </div>
-		
-            
-
-
-			
-			
-    </div> <!-- /row -->
-		<div class="row">
-		
-			<div class="col-md-4">
-				<a href="ndvi/ndvi.html" target="_blank" class="whole">
-                <div class="jumbotron">
-                			
-					<h1>NDVI change</h1>
-                    <img src="ndvi/ndvi_thumb.png" class="img-responsive" alt="Cinque Terre">
-								
-                    <p class="lead">This map shows difference in NDVI for CHKO Broumovsko between 20. 6. 2002 and 14. 6. 2009. Leaflet & Chart.js. Data from Landsat 5.</p>
-
-                </div>
-			</a>
-            </div>
-			
-			
-			
-		</div> <!-- /row -->
-		
-		
-		
-	</div>
-    <!-- /container -->
-	
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </div>
+    <footer>etomanon@gmail.com | 2017</footer>
+    <script src="js/func.js"></script>
 </body>
 
 </html>

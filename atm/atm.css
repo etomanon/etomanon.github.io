@@ -23,11 +23,13 @@ html, body {
 	   height: 100%;
 	   width: 100%;
 	   font-family: 'Roboto Condensed', sans-serif;
+       margin: 0px;
+       padding: 0px;
 	}
 	
 #mapid{ 
-			height: 99%; 
-			width: 99%;
+			height: calc(100% - 2px); 
+			width: calc(100% - 2px);
 			border: 1px solid #ff7800;
 		
 	}
@@ -44,7 +46,6 @@ html, body {
 	z-index: 1001;
 	color: white;
 	background-color: #ff7800;
-	margin-top: 9px;
 }
 	
 .legend {
@@ -337,7 +338,8 @@ opacity: 1 !important;
 @media (orientation: portrait) {
 	
 #pruh {
-	left: 20%;
+	left: 15%;
+    font-size: 0.85em;
 }
 
 .buttonx {

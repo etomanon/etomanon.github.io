@@ -6,6 +6,7 @@
     background: rgba(255,255,255,1);
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     border-radius: 5px;
+    margin-top: 30px !important;
 }
 .info h4 {
     margin: 0 0 5px;
@@ -23,11 +24,13 @@ html, body {
 	   height: 100%;
 	   width: 100%;
 	   font-family: 'Roboto Condensed', sans-serif;
+       margin: 0px;
+       padding: 0px;
 	}
 	
 #mapid{ 
-			height: 99%; 
-			width: 99%;
+			height: calc(100% - 2px); 
+			width: calc(100% - 2px);
 			border: 1px solid #fb1010;
 		
 	}
@@ -44,7 +47,6 @@ html, body {
 	z-index: 1001;
 	color: white;
 	background-color: #fb1010;
-	margin-top: 9px;
 }
 	
 .legend {
@@ -305,6 +307,7 @@ input[type=range]:focus::-ms-fill-upper {
 	
 #pruh {
 	left: 20%;
+    font-size: 0.85em;
 }
 
 .buttonx {
@@ -320,4 +323,5 @@ input[type=range]:focus::-ms-fill-upper {
     width: 6% !important;
     /* padding-top: 5% !important; */
     cursor: pointer;
+}
 }
