@@ -5,7 +5,8 @@ $("#wel").hide();
 $('#wel').fadeIn(4000);
 setTimeout(function () {
     $("#wel").css("display", "block");
-}, 500);
+    $("#hi").css("display", "none");
+}, 200);
 $("#bg").animate({
     opacity: 1
 }, 2000)
