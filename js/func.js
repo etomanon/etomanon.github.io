@@ -2,14 +2,17 @@
 $("#navd").hide();
 $("#bg").css("opacity", "0");
 $("#wel").hide();
-$('#wel').fadeIn(4000);
+
 setTimeout(function () {
-    $("#wel").css("display", "block");
-    $("#hi").css("display", "none");
-}, 200);
-$("#bg").animate({
+    $('#wel').fadeIn(4000);
+    $("#bg").animate({
     opacity: 1
 }, 2000)
+    $("#wel").css("display", "block");
+    $("#hi").css("display", "none");
+    
+}, 500);
+
 
 // fade in .navbar
 $(function () {
