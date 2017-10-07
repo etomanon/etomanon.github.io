@@ -14,6 +14,10 @@ setTimeout(function () {
 }, 500);
 
 
+$(".toggle").on("click", function() {
+    $(".toggle").parent().parent().toggleClass('active');
+  });
+
 // fade in .navbar
 $(function () {
     $(window).scroll(function () {
@@ -28,70 +32,34 @@ $(function () {
 
 
 
-$("h2").click(function () {
+$("h2, #compass").click(function () {
     $('html, body').animate({
-        scrollTop: $(".item:first").offset().top - 60
+        scrollTop: $(".glob-wrap").offset().top - 60
     }, 1000);
 });
 
 $("#port").click(function () {
+    $('#nav-icon3').toggleClass('open');
+    $(".toggle").parent().parent().toggleClass('active');
     $('html, body').animate({
-        scrollTop: $(".item:first").offset().top - 60
+        scrollTop: $(".glob-wrap").offset().top - 60
     }, 1000);
 });
 
 $("#ba").click(function () {
+    $('#nav-icon3').toggleClass('open');
+    $(".toggle").parent().parent().toggleClass('active');
     $('html, body').animate({
         scrollTop: $("#bach").offset().top - 48
     }, 1000);
 });
 
-function hambh() {
-    $("li").unbind("click");
-    $("#ba").focus();
-    $("li:not(:first-child)").animate({ opacity: '0' }, '500');
-    $("#hamb").html("&#9776;")
-    setTimeout(function () {
-        $("li:not(:first-child)").css("display", "none");
+$(document).ready(function(){
+	$('#nav-icon3').click(function(){
+        $('#nav-icon3').toggleClass('open');
+	});
+});
 
-        hambu()
-    }, 500);
-}
-
-var har = false
-var hamr = $("#hamb")
-setInterval(function () {
-    if ("none" == hamr.css("display")) {
-        $("li:not(:first-child)").css("display", "inline-block");
-        $("li:not(:first-child)").css("opacity", "1");
-        har = false
-    }
-
-}, 100);
-
-setInterval(function () {
-    if ("inline-block" == hamr.css("display") && !har) {
-        $("li:not(:first-child)").css("display", "block");
-        $("li:not(:first-child)").css("opacity", "0");
-        har = true
-    }
-
-}, 100);
-
-hambu()
-
-function hambu() {
-    $("#hamb").click(function () {
-        $("#hamb").unbind("click");
-        $("li:not(:first-child)").css("opacity", "0");
-        $("li:not(:first-child)").css("display", "block");
-        $("li:not(:first-child)").animate({ opacity: '1' }, '500');
-        $("#hamb").html("X")
-        $("li").click(function () {
-            hambh()
-        });
-    });
-}
 
 
 

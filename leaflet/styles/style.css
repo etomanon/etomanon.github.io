@@ -373,3 +373,8 @@ input[type=range]:focus::-ms-fill-lower {
 input[type=range]:focus::-ms-fill-upper {
   background: #2DA0E2;
 }
+
+
+#pbut {
+  padding: 0;
+}

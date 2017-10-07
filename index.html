@@ -6,89 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GIS Portfolio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <link rel="stylesheet" href="styles/index.css"  />
-    <link rel='stylesheet' media='(max-width: 1500px)' href='styles/index_m.css' />
-    <link rel='stylesheet' media='(max-width: 1200px)' href='styles/index_s.css' />
-    <link rel='stylesheet' media='(max-width: 500px)' href='styles/index_es.css' />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/index.css" />
     <link rel="icon" type="image/png" href="img/icon.png">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
 </head>
 
 <body>
     <div id="hi">
-        </div>
-    <div src="img/wall.jpg" id="bg">
+    </div>
+    <div id="bg">
     </div>
     <div id="wel">
         <h2>Where<br>Space<br>Matters<br>
-            <div id="compass">
-                <div id="pointer"></div>
-            </div>
         </h2>
+        <div id="compass">
+            <div id="pointer"></div>
+        </div>
+
     </div>
     <div id="navd">
-        <ul>
-            <li id="hamb">&#9776;</li>
-            <li><a href="javascript:void(0);" class="navi" id="port">GIS Portfolio</a></li>
-            <li><a href="javascript:void(0);" class="navi" id="ba">Bachelor's thesis</a></li>
-        </ul>
+        <nav class="navbar">
+            <div class="nav-base">
+                <div id="nav-icon3" class="toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <a href="mailto:etomanon@gmail.com" class="brand">etomanon@gmail.com</a>
+            </div>
+            <div class="left">
+                <a href="javascript:void(0)" id="port" class="link">Portfolio</a>
+                <a href="javascript:void(0)" id="ba" class="link">Bachelor's thesis</a>
+            </div>
+        </nav>
     </div>
     <span id="her"></span>
-    <div class="item">
-        <a href="atm/atm.html" target="_blank" class="whole">
-            <div class="item2">
+    <div class="glob-wrap">
 
-                <h1>The nearest ATM</h1>
-                <img src="atm/atm_thumb.png">
 
-                <p class="lead">Find the nearest ATM in the Czech Republic. Leaflet, Turf.js, Leaflet-geosearch & Leaflet.markercluster.
-                    Source: Open Street Map (2017).</p>
+        <div class="item-wrapper">
 
+
+            <div class="item-big">
+                <a href="https://express-tourism.herokuapp.com/" target="_blank" class="whole">
+                    <h3 class="left-header">World Tourist Map</h3>
+                </a>
+
+                <div class="text-content">
+                    <div class="lead">Find tourist attractions all around the world! Express & Leaflet. Source: Open Street Map (2017).</div>
+                </div>
+                <div class="main-border"></div>
+                <a href="https://express-tourism.herokuapp.com/" target="_blank" class="whole main-anchor">
+                    <div class="image-content" style="background-image: url(img/tourism.jpg)">
+
+                    </div>
+                </a>
+                <div class="main-border"></div>
             </div>
-        </a>
-    </div>
 
-    <div class="item">
-        <a href="play/play.html" target="_blank" class="whole">
-            <div class="item2">
 
-                <h1>Heatmap of playgrounds</h1>
-                <img src="play/play_thumb.png">
+            <div class="item">
+                <a href="atm/atm.html" target="_blank" class="whole">
+                    <h3 class="left-header">The nearest ATM</h3>
+                </a>
 
-                <p class="lead">Heatmap of all playgrounds in the Czech Republic. Leaflet, leaflet-heatmap.js. Source: Open Street Map (2017).</p>
+                <div class="text-content">
+                    <div class="lead">Find the nearest ATM in the Czech Republic. Leaflet, Turf.js, Leaflet-geosearch & Leaflet.markercluster.
+                        Source: Open Street Map (2017).</div>
+                </div>
+                <a href="atm/atm.html" target="_blank" class="whole main-anchor">
+                    <div class="image-content" style="background-image: url(atm/atm_thumb.png)">
 
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="item">
-        <a href="sipri/sipri.html" target="_blank" class="whole">
-            <div class="item2">
+            <div class="item">
+                <a href="play/play.html" target="_blank" class="whole">
+                    <h3 class="left-header">Heatmap of playgrounds</h3>
+                </a>
 
-                <h1>Military spending</h1>
-                <img src="sipri/sipri_thumb.png">
+                <div class="text-content">
+                    <div class="lead">Heatmap of all playgrounds in the Czech Republic. Leaflet, leaflet-heatmap.js. Source: Open Street Map
+                        (2017).
+                    </div>
+                </div>
+                <a href="play/play.html" target="_blank" class="whole main-anchor">
+                    <div class="image-content" style="background-image: url(play/play_thumb.png)">
 
-                <p class="lead">Worldwide evolution of military spending in % of GDP from 1988 to 2015. Leaflet & Chart.js. Data from SIPRI.</p>
-
+                    </div>
+                </a>
             </div>
-        </a>
-    </div>
 
-    <div class="item">
-        <a href="ndvi/ndvi.html" target="_blank" class="whole">
-            <div class="item2">
 
-                <h1>NDVI change</h1>
-                <img src="ndvi/ndvi_thumb.png">
+            <div class="item">
+                <a href="sipri/sipri.html" target="_blank" class="whole">
+                    <h3 class="left-header">Military spending</h3>
+                </a>
 
-                <p class="lead">This map shows difference in NDVI for CHKO Broumovsko between 20. 6. 2002 and 14. 6. 2009. Leaflet & Chart.js.
-                    Data from Landsat 5.</p>
+                <div class="text-content">
+                    <div class="lead">Worldwide evolution of military spending in % of GDP from 1988 to 2015. Leaflet & Chart.js. Data from
+                        SIPRI.
+                    </div>
+                </div>
+                <a href="sipri/sipri.html" target="_blank" class="whole main-anchor">
+                    <div class="image-content" style="background-image: url(sipri/sipri_thumb.png)">
 
+                    </div>
+                </a>
             </div>
-        </a>
+
+
+            <div class="item">
+                <a href="ndvi/ndvi.html" target="_blank" class="whole">
+                    <h3 class="left-header">NDVI</h3>
+                </a>
+
+                <div class="text-content">
+                    <div class="lead">This map shows difference in NDVI for CHKO Broumovsko between 20. 6. 2002 and 14. 6. 2009. Leaflet &
+                        Chart.js. Data from Landsat 5.
+                    </div>
+                </div>
+                <a href="ndvi/ndvi.html" target="_blank" class="whole main-anchor">
+                    <div class="image-content" style="background-image: url(ndvi/ndvi_thumb.png)">
+
+                    </div>
+                </a>
+            </div>
+
+        </div>
     </div>
     <div id="bach">
         <div id="bachchild">
-            <h3>Analysis of open geospatial data and the concept of its application</h3>
+            <h3 class="bach-title">Analysis of open geospatial data and the concept of its application</h3>
             <p id="bapa">This bachelor’s thesis studies issues of open spatial data. It describes definition of open data and its possible
                 geographic formats. It examines possibilities of sharing spatial data and covers main sources of open spatial
                 data in the Czech Republic. It also analyses chosen examples of commercial use of open spatial data abroad.
@@ -101,7 +153,7 @@
             <br>
             <a href="leaflet/index.html" target="_blank">
                 <div style="text-align: center; font-size: 75%;">Click for demo</div>
-                <img src="img/bach.jpg" id="bak">
+                <img src="img/bach.jpg" id="bak" alt="thesis">
             </a>
         </div>
     </div>
