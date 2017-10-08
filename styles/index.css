@@ -144,6 +144,7 @@ h3 {
     padding-top: 10px;
     padding-left: 10px;
     padding-right: 10px;
+    line-height: 1.4;
     text-align: center;
     font-weight: 600;
     color: #000;
@@ -299,8 +300,8 @@ Time for some gloss and other fancy stuff.
     font-size: 100%;
     cursor: pointer;
     border: 10px solid #777;
-    background: radial-gradient( ellipse cover, white, #A3E2FC);
-    box-shadow: 0 0 4px #000, 0 0 1px 8px #ccc, 5px 10px 15px #48436f;
+    background: radial-gradient( ellipse cover, white, #36A2EB);
+    box-shadow: 0 0 4px #000, 0 0 1px 8px #ccc, 5px 10px 15px #423F3F;
     transition: transform 0.5s ease;
 }
 
@@ -414,7 +415,7 @@ on #pointer:before */
     right: 0;
     top: 0;
     bottom: 0;
-    background: linear-gradient( -63deg, rgba(79, 188, 242, 1) 1%, rgba(26, 110, 206, 1) 50%, rgba(216, 216, 216, 1) 51%, rgba(244, 94, 80, 1) 53%, rgba(255, 45, 45, 1) 100%);
+    background: linear-gradient( -63deg, #36A2EB 1%, #36A2EB 50%, rgba(216, 216, 216, 1) 51%, #36A2EB 53%, #36A2EB 100%);
     transform: skewX(60deg);
 }
 
