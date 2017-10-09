@@ -16,6 +16,7 @@ setTimeout(function () {
 
 $(".toggle").on("click", function() {
     $(".toggle").parent().parent().toggleClass('active');
+    $('#nav-icon3').toggleClass('open');
   });
 
 // fade in .navbar
@@ -52,12 +53,6 @@ $("#ba").click(function () {
     $('html, body').animate({
         scrollTop: $("#bach").offset().top - 48
     }, 1000);
-});
-
-$(document).ready(function(){
-	$('#nav-icon3').click(function(){
-        $('#nav-icon3').toggleClass('open');
-	});
 });
 
 
