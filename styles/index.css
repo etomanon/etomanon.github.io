@@ -272,12 +272,14 @@ a {
     object-fit: contain;
     width: 90%;
     filter: grayscale(100%);
+    transform: scale(0);
     transition: 3s ease all;
     font-family: 'object-fit: contain;'
 }
 
 .owl-carousel .active img {
     filter: grayscale(0%);
+    transform: scale(1);
 }
 
 .owl-carousel h3 {
