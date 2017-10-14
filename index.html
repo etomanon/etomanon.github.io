@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>GIS Portfolio</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/ofi.min.js"></script>
     <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/owl.carousel.min.css">
+    <link rel="stylesheet" href="styles/owl.theme.default.min.css">
     <link rel="stylesheet" href="styles/index.css" />
+    <script src="js/owl.carousel.min.js"></script>
     <link rel="icon" type="image/png" href="img/icon.png">
     <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
 </head>
@@ -18,7 +22,10 @@
     <div id="bg">
     </div>
     <div id="wel">
-        <h2>Where<br>Space<br>Matters<br>
+        <h2>Where
+            <br>Space
+            <br>Matters
+            <br>
         </h2>
         <div id="compass">
             <div id="pointer"></div>
@@ -39,6 +46,7 @@
             <div class="left">
                 <a href="javascript:void(0)" id="port" class="link">Portfolio</a>
                 <a href="javascript:void(0)" id="ba" class="link">Bachelor's thesis</a>
+                <a href="javascript:void(0)" id="car" class="link">Techs</a>
             </div>
         </nav>
     </div>
@@ -51,11 +59,14 @@
 
             <div class="item-big">
                 <a href="https://express-tourism.herokuapp.com/" target="_blank" class="whole">
-                    <h3 class="left-header">World Tourist Map<br>[work in progress]</h3>
+                    <h3 class="left-header">World Tourist Map
+                        <br>[work in progress]</h3>
                 </a>
 
                 <div class="text-content">
-                    <div class="lead">Find tourist attractions all around the world! Express & Leaflet.<br> Source code: <a href="https://github.com/etomanon/express_tourism" target="_blank">GitHub</a> Data: Open Street Map (2017).</div>
+                    <div class="lead">Find tourist attractions all around the world! Express & Leaflet.
+                        <br> Source code:
+                        <a href="https://github.com/etomanon/express_tourism" target="_blank">GitHub</a> Data: Open Street Map (2017).</div>
                 </div>
                 <div class="main-border"></div>
                 <a href="https://express-tourism.herokuapp.com/" target="_blank" class="whole main-anchor">
@@ -144,12 +155,15 @@
             <p id="bapa">This bachelor’s thesis studies issues of open spatial data. It describes definition of open data and its possible
                 geographic formats. It examines possibilities of sharing spatial data and covers main sources of open spatial
                 data in the Czech Republic. It also analyses chosen examples of commercial use of open spatial data abroad.
-                Finally, it suggests own prototypic application in the area of traffic data.<br><br>I have used 3 datasets
-                to cover the studied region of D2 highway - <a href="http://aplikace.policie.cz/dopravni-informace/" target="_blank">Police of the Czech Republic</a>,
-                <a href="http://rodos.vsb.cz/Road.aspx?road=D2" target="_blank">RODOS</a> and OpenStreetMap. I have formed
-                a data model and programmed scripts to get, transform and insert data into PostgreSQL database. After that,
-                I have connected the database to GeoServer. Thanks to that, I have created a web map. The thesis also lists
-                shortcomings of current traffic maps and proposes possible solutions.</p>
+                Finally, it suggests own prototypic application in the area of traffic data.
+                <br>
+                <br>I have used 3 datasets to cover the studied region of D2 highway -
+                <a href="http://aplikace.policie.cz/dopravni-informace/" target="_blank">Police of the Czech Republic</a>,
+                <a href="http://rodos.vsb.cz/Road.aspx?road=D2" target="_blank">RODOS</a> and OpenStreetMap. I have formed a data model and programmed scripts to get, transform and insert
+                data into PostgreSQL database. After that, I have connected the database to GeoServer. Thanks to that, I
+                have created a web map. The thesis also lists shortcomings of current traffic maps and proposes possible
+                solutions.
+            </p>
             <br>
             <a href="leaflet/index.html" target="_blank">
                 <div style="text-align: center; font-size: 75%;">Click for demo</div>
@@ -157,6 +171,56 @@
             </a>
         </div>
     </div>
+
+
+    <div id="carousel" class="owl-carousel">
+        <div>
+            <h3>HTML | CSS [LESS] | JS</h3>
+            <img src="img/css.png" alt="tech">
+        </div>
+        <div>
+            <h3>Node.js</h3>
+            <img src="img/node.png" alt="tech">
+        </div>
+        <div>
+            <h3>PostgreSQL + PostGIS</h3>
+            <img src="img/postgre.png" alt="tech">
+        </div>
+        <div>
+            <h3>ArcGIS</h3>
+            <img src="img/esri.png" alt="tech">
+        </div>
+        <div>
+            <h3>Gulp</h3>
+            <img src="img/gulp.png" alt="tech">
+        </div>
+        <div>
+            <h3>Express</h3>
+            <img src="img/express.png" alt="tech">
+        </div>
+        <div>
+            <h3>Python</h3>
+            <img src="img/python.png" alt="tech">
+        </div>
+        <div>
+            <h3>Git</h3>
+            <img src="img/git.png" alt="tech">
+        </div>
+        <div>
+            <h3>Leaflet</h3>
+            <img src="img/leaflet.png" alt="tech">
+        </div>
+        <div>
+            <h3>GeoServer</h3>
+            <img src="img/geoserver.png" alt="tech">
+        </div>
+        <div>
+            <h3>QGIS</h3>
+            <img src="img/qgis.png" alt="tech">
+        </div>
+
+    </div>
+
     <footer>etomanon@gmail.com | 2017</footer>
     <script src="js/func.js"></script>
 </body>

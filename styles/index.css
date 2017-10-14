@@ -21,11 +21,16 @@ body {
     display: none;
     height: 100%;
     width: 100%;
+}
+
+h2 {
+    
     text-align: center;
     letter-spacing: 15px;
     line-height: 350%;
     font-size: 5vh;
     color: grey;
+    margin-bottom: 30px;
 }
 
 #arrow {
@@ -111,8 +116,8 @@ p {
 }
 
 #bach {
-    position: relative;
-    padding: 20px 20px 20px 20px;
+    margin-top: 40px;
+    padding: 20px 40px 20px 40px;
     background-color: #eee;
 }
 
@@ -181,14 +186,6 @@ h3 {
     padding-top: 56.25%;
 }
 
-.image-content>.content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-}
-
 .image-content {
     position: relative;
     flex-basis: 100%;
@@ -220,10 +217,10 @@ a {
 
 .item {
     z-index: 2;
-    flex-basis: calc(50% - 20px);
+    flex-basis: calc(50% - 40px);
     display: flex;
-    margin-top: 20px;
-    margin-right: 20px;
+    margin-top: 40px;
+    margin-right: 40px;
     align-content: flex-start;
     flex-wrap: wrap;
     background-color: white;
@@ -260,6 +257,67 @@ a {
     display: block;
     z-index: 0;
     background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1));
+}
+
+.owl-carousel {
+    position: relative;
+    max-width: 1200px;
+    height: 300px;
+    margin: 0 auto 50px;
+}
+
+.owl-carousel .owl-item img {
+    height: 250px;
+    margin: 0 auto;
+    object-fit: contain;
+    width: 90%;
+    filter: grayscale(100%);
+    transition: 3s ease all;
+    font-family: 'object-fit: contain;'
+}
+
+.owl-carousel .active img {
+    filter: grayscale(0%);
+}
+
+.owl-carousel h3 {
+    color: #fff;
+    font-weight: 800;
+    letter-spacing: 1px;
+    background: #fff;
+    transition: 3s ease all;
+}
+
+
+.owl-carousel .active h3 {
+    background-color: #36A2EB;
+}
+
+.owl-prev, .owl-next {
+    position: absolute;
+    top: 100%;
+    border: solid #36A2EB;
+    border-width: 0 10px 10px 0;
+    display: inline-block;
+    padding: 10px;
+    transition: .3s ease all;
+    
+}
+
+.owl-prev:hover, .owl-next:hover {
+    border: solid #000;
+    border-width: 0 5px 5px 0;
+    
+}
+
+.owl-prev {
+    left: 10px;
+    transform: rotate(135deg);
+}
+
+.owl-next {
+    right: 10px;
+    transform: rotate(-45deg);
 }
 
 footer {
@@ -299,7 +357,7 @@ Time for some gloss and other fancy stuff.
     font-size: 100%;
     cursor: pointer;
     border: 10px solid #777;
-    background: radial-gradient( ellipse cover, white, #36A2EB);
+    /* background: radial-gradient( ellipse cover, white, #36A2EB); */
     box-shadow: 0 0 4px #000, 0 0 1px 8px #ccc, 5px 10px 15px #423F3F;
     transition: transform 0.5s ease;
 }
@@ -438,10 +496,10 @@ on #pointer:before */
 
 .item-big {
     z-index: 2;
-    flex-basis: calc(100% - 20px);
+    flex-basis: calc(100% - 40px);
     display: flex;
     margin-top: 20px;
-    margin-right: 20px;
+    margin-right: 40px;
     align-content: flex-start;
     flex-wrap: wrap;
     background-color: white;
@@ -516,6 +574,11 @@ on #pointer:before */
         order: unset;
     }
 
+    h2 {
+        font-size: 4vh;
+        letter-spacing: 10px;
+    }
+
     h3 {
         margin-top: 0;
     }
@@ -534,9 +597,18 @@ on #pointer:before */
     .item-big .main-border {
         display: none;
     }
-    #wel {
-        font-size: 4vh;
+
+    #bach {
+        margin-top: 20px;
+        padding: 20px;
     }
+
+    .owl-prev, .owl-next {
+        position: absolute;
+        top: calc(100%);
+        
+    }
+    
 }
 
 
