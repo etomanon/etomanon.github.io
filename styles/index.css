@@ -7,3 +7,37 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
+body {
+    background: #fff
+}
+
+.wrapper {
+    max-width: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+/* #c5d5cb */
+
+header {
+    width: 100%;
+    font-size: 24px;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    background: #9fa8a3
+}
+
+main {
+    width: 100%;
+    margin: 10px 0;
+}
+
+footer {
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background: #e3e0cf
+}
