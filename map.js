@@ -8,7 +8,7 @@ let year2011 = document.getElementById("year-2011");
 let map = document.getElementById("svg-kraje");
 let SVGDocument
 map.onload = function () {
-    map.getSVGDocument()
+    SVGDocument = map.getSVGDocument()
 
     // let SVGDocument = map.
     let paths = SVGDocument.getElementsByTagName("path");
