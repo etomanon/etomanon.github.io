@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css?family=Lora|Open+Sans:500&subset=latin-ext');
+
+#content {
+    width: 70%;
+    height: 500px;
+    margin: 100px auto;
+    text-align: center;
+    background-color: #FFFFFF;
+    padding: 20px 10px 20px 20px;
+    border-radius: 15px 15px 15px 15px;
+    font-family: 'Open Sans', sans-serif;
+    border: solid 1px #c1c5c5;
+    box-shadow: 0 15px 20px rgba(0, 0, 0, 0.3);
+}
+
+#map {
+    width: 80%;
+    height: 100%;
+    float: left;
+}
+
+#information {
+    width: 18%;
+    height: 100%;
+    float: right;
+}
+
+#svg-kraje {
+    width: 95%;
+}
+
+p {
+    text-align: justify;
+}
+
+body {
+    background-color: #E9EBEE;
+}
+
+.year {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.year-label {
+    margin-top: 30px;
+}

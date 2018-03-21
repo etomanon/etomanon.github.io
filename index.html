@@ -1,28 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="cs">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Jan Sikora - Kartografická vizualizace</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.4/svg.min.js"></script>
-    <link rel="stylesheet" href="styles/normalize.css" />
-    <link rel="stylesheet" href="styles/index.css" />
-    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,600,700" rel="stylesheet">
+
+    <title>Interaktivní mapa krajů ČR</title>
+    <link rel="stylesheet" href="main.css">
 </head>
-
 <body>
-    <div class="wrapper">
-        <header>
-            SMIL animace
-        </header>
-        <main>
-            <div id="drawing"></div>
-        </main>
-
-        <footer>Jan Sikora 436986 - Kartografická vizualizace | 2018</footer>
+    <div id="content">
+        <div id="map">
+            <object id="svg-kraje" data="./images/kraje.svg" type="image/svg+xml"></object>
+        </div>
+        <div id="information">
+            <h4>Počty obyvatel v jednotlivých letech:</h4>
+            <p class="year-label">Rok 1991</p>
+                <p id="year-1991" class="year">N/A</p>
+            <p class="year-label">Rok 2001</p>
+                <p id="year-2001" class="year">N/A</p>
+            <p class="year-label">Rok 2011</p>
+                <p id="year-2011" class="year">N/A</p>
+        </div>
     </div>
-    <script src="js/main.js"></script>
+    <script src="map.js"></script>
 </body>
-
 </html>
