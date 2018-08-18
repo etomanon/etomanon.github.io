@@ -120,7 +120,7 @@ $(document).ready(function () {
         items: 1,
         nav: true,
         loop: true,
-        autoplay: true,
+        autoplay: false,
         margin: 0,
         navText: ['', ''],
         responsive: {
