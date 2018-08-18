@@ -109,10 +109,17 @@ html, body {
 	z-index: 1111;
 }              
 .info.legend {
+    display: flex;
+    flex-direction: column;
 	margin-right: 0px !important;
 	border-top-right-radius: 0px;
 	
 }
+
+.info.legend > div:not(:first-child) {
+    margin-top: 5px;
+} 
+
 .buttonx1 {
 	border-radius: 5px;
     background-color: white;
@@ -280,22 +287,24 @@ input[type=range]:focus::-ms-fill-upper {
 
 @media (orientation: portrait) {
 	
-#pruh {
-	left: 25%;
-    font-size: 0.85em;
-}
+    #pruh {
+        left: 25%;
+        font-size: 0.85em;
+    }
 
-.buttonx {
-    position: absolute;
-    top: 71.5%;
-    left: 91%;
-    background-color: white;
-    border: solid black 2px;
-    color: black;
-    margin: 8px 8px;
-    text-align: center;
-    text-decoration: none;
-    width: 6% !important;
-    /* padding-top: 5% !important; */
-    cursor: pointer;
+    .buttonx {
+        position: absolute;
+        top: 71.5%;
+        left: 91%;
+        background-color: white;
+        border: solid black 2px;
+        color: black;
+        margin: 8px 8px;
+        text-align: center;
+        text-decoration: none;
+        width: 6% !important;
+        /* padding-top: 5% !important; */
+        cursor: pointer;
+    }
+
 }

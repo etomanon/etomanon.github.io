@@ -176,8 +176,8 @@ legend.onAdd = function (mymap) {
     
     for (var i = 0; i < grades.length; i++) {
         div.innerHTML +=
-            '<i style="background:' + getColor(grades[i] + 1) + '";color="black"></i> ' +
-            grades[i] + (grades[i + 1] ? ' - ' + grades[i + 1] + ' % <br>' : '+ %');
+            '<div><i style="background:' + getColor(grades[i] + 1) + '";color="black"></i> ' +
+            grades[i] + (grades[i + 1] ? ' - ' + grades[i + 1] + ' %</div>' : '+ %</div>');
 			
     }
 
