@@ -134,6 +134,11 @@ $(document).ready(function () {
     });
 
     objectFitImages('.owl-carousel .owl-item img');
+
+    document.getElementsByClassName("divider")[0].addEventListener("click", function() {
+        open("https://github.com/etomanon","_blank");
+    });
+
 });
 
 

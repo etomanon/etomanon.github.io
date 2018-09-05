@@ -6,6 +6,7 @@ body {
     margin: 0px;
     font-family: 'Nunito', sans-serif;
     overflow: visible;
+    font-size: 16px;
 }
 
 #hi {
@@ -37,6 +38,11 @@ h2 {
     display: inline-block;
     position: relative;
     text-transform: uppercase;
+    transition: 0.3s ease-in-out top;
+}
+
+#wel h2 div:hover {
+    top: -1rem !important;
 }
 
 #wel h2 div:nth-child(even) {
@@ -212,17 +218,53 @@ h2 {
 }
 
 .divider {
-    padding: 80px 0;
+    position: relative;
+    padding: 120px 0;
     margin: 55px 0 80px 0;
-    background: #000;
     background-position: center;
-    box-shadow: 0 0 25px 15px rgba(255, 255, 255, 1) inset;
+    box-shadow: 0 0 40px 30px rgba(255, 255, 255, 1) inset;
     transition: .5s ease-in-out all;
     opacity: 0.5;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .divider:hover {
     opacity: 1;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1) inset;
+}
+
+.divider:hover::after, .divider:hover::before {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.divider::after {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "Explore GitHub";
+    transform: translate(-100%, -50%);
+    transition: 0.5s ease-in-out all;
+    font-size: 2rem;
+    color: #000;
+    font-weight: 800;
+    text-align: center;
+}
+
+.divider::before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    content: "";
+    transform: translate(-100%, -50%);
+    transition: 0.5s ease-in-out all;
+    font-size: 2rem;
+    width: 100%;
+    height: 100%;
+    font-weight: 800;
+    background: #fff;
+    opacity: 0.75;
 }
 
 .navi {
@@ -324,7 +366,7 @@ a {
     position: absolute;
     top: 100%;
     border: solid #36A2EB;
-    border-width: 0 10px 10px 0;
+    border-width: 0 6px 6px 0;
     display: inline-block;
     padding: 10px;
     transition: .3s ease all;
@@ -333,7 +375,7 @@ a {
 
 .owl-prev:hover, .owl-next:hover {
     border: solid #000;
-    border-width: 0 5px 5px 0;
+    border-width: 0 6px 6px 0;
     
 }
 
