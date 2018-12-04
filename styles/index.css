@@ -124,18 +124,15 @@ h2 {
 
 .portfolio-wrapper {
     position: relative;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .item-wrapper {
     position: absolute;
     top: 0;
-    transform: translateX(-100%);
     width: 100%;
+    transform: translateX(-100%);
     opacity: 0;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
     transition: .5s ease-in-out all;
 }
 
@@ -145,32 +142,50 @@ h2 {
     transform: translateX(0);
 }
 
+.item-wrapper__container {
+    width: auto;
+    margin-right: -40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .item {
     position: relative;
     box-sizing: border-box;
+    width: 33.333%;
     margin: 0 0 3% 0;
-    background: #eee;
-    cursor: pointer;
     padding: 0 40px 0 0;
     transition: .3s ease-in-out all;
+}
+
+.item .heading {
+    position: relative;
+    z-index: 1;
+    background: #eee;
+    cursor: pointer;
     overflow: hidden;
-    width: 30%;
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    border: 4px solid #eee;
 }
 
-.item:hover {
-    -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
-    -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
-    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+.test .heading {
+    background: #36eb7f;
+    border: 4px solid #36eb7f;
+    color: #fff;
+    transition: .5s ease-in-out color;
 }
 
-.item:hover::after {
+.test:hover .heading {
+    color: #000;
+}
+
+.item .heading:hover {
+}
+
+.item .heading:hover::after {
     border-left: 25px solid #36A2EB;
 }
 
-.item::after {
+.item .heading::after {
     position: absolute;
     top: 50%;
     right: 10px;
@@ -184,29 +199,26 @@ h2 {
     transition: .3s ease-in-out all;
 }
 
-.item:hover::before {
+.item .heading:hover::before {
     transform: translate(0, 0);
 }
 
-.item::before {
+.item .heading::before {
     position: absolute;
+    top: 0;
+    left: 0;
     content: "";
     background: #fff;
     width: 100%;
     height: 100%;
     transform: translate(-100%, 0);
     transition: .3s ease-in-out all;
-    z-index: 0;
-}
-
-.item .heading {
-    position: relative;
-    z-index: 1;
+    z-index: -1;
 }
 
 @media screen and (max-width: 700px) {
     .item {
-        width: 45%;
+        width: 50%;
         margin-bottom: 30px;
     }
 }
@@ -759,4 +771,18 @@ on #pointer:before */
     top: 18px;
     width: 0%;
     left: 50%;
+}
+
+
+.warning {
+    background: #36eb7f;
+    text-align: center;
+    color: #fff;
+    padding: 15px 10px;
+    font-weight: 600;
+}
+
+
+.item__full {
+    width: 100%;
 }
