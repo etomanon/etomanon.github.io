@@ -11,7 +11,7 @@ setTimeout(function () {
     }, 2000)
     $("#wel").css("display", "block");
     $("#hi").css("display", "none");
-    $("#wel h2 div").each(function (i, obj) {
+    $("#wel .words div").each(function (i, obj) {
         var rotate = Math.random() * 360;
         var top = getPosition()
         var left = getPosition()
@@ -19,15 +19,17 @@ setTimeout(function () {
             transform: "rotate(" + rotate + "deg)",
             top: top + "px",
             left: left + "px",
+            opacity: "0"
         });
     })
     setTimeout(function () {
-        $("#wel h2 div").each(function (i, obj) {
+        $("#wel .words div").each(function (i, obj) {
             $(obj).css({
                 transform: "rotate(0deg)",
                 transition: "3s ease-out all",
                 top: "0",
-                left: "0"
+                left: "0",
+                opacity: "1"
             })
             setTimeout(function () {
                 $(obj).css({
