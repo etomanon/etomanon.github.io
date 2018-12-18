@@ -164,18 +164,11 @@ body {
     background: #eee;
     cursor: pointer;
     overflow: hidden;
-    border: 4px solid #eee;
+    border-bottom: 4px solid #eee;
 }
 
 .test .heading {
-    background: #36A2EB;
-    border: 4px solid #36A2EB;
-    color: #fff;
-    transition: .5s ease-in-out color;
-}
-
-.test:hover .heading {
-    color: #000;
+    border-bottom: 4px solid #36A2EB;
 }
 
 .item .heading:hover::after {
@@ -196,16 +189,9 @@ body {
     transition: .3s ease-in-out all;
 }
 
-.test .heading::after {
-    border-left: 15px solid #fff;
-}
-
-.test .heading:hover::after {
-    border-left: 25px solid #000;
-}
-
 .item .heading:hover::before {
     transform: translate(0, 0);
+    width: calc(100% + 2px);
 }
 
 .item .heading::before {
@@ -780,14 +766,19 @@ on #pointer:before */
 
 
 .warning {
-    background: #36A2EB;
+    background: #eee;
+    border-bottom: 4px solid #36A2EB;
     text-align: center;
-    color: #fff;
     padding: 15px 10px;
     font-weight: 600;
 }
 
-
 .item__full {
     width: 100%;
+}
+
+.line {
+    height: 2px;
+    width: 100%;
+    background: #d3d3d3;
 }
