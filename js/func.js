@@ -16,35 +16,24 @@ setTimeout(function () {
         var top = getPosition()
         var left = getPosition()
         $(obj).css({
-            transform: "rotate(" + rotate + "deg)",
-            top: top + "px",
-            left: left + "px",
+            transform: "rotate(" + rotate + "deg) translate(" + left + "px," + top + "px)",
             opacity: "0"
         });
     })
     setTimeout(function () {
         $("#wel .words div").each(function (i, obj) {
             $(obj).css({
-                transform: "rotate(0deg)",
+                transform: "rotate(0deg) translate(0, 0)",
                 transition: "3s ease-out all",
-                top: "0",
-                left: "0",
                 opacity: "1"
             })
             setTimeout(function () {
-                $(obj).css({
-                    letterSpacing: "15px",
-                    transition: "0.5s ease-out all",
-
-                })
-            }, 3000)
-            setTimeout(function () {
-                $(obj).css({
-                    letterSpacing: "-5px",
-                    transition: "0.3s ease-out all",
-
-                })
-            }, 3500)
+                    $(obj).css({
+                        transform: "scale(1.3)",
+                        textShadow: "0 8px 5px rgba(0, 0, 0, 0.2)",
+                        transition: "0.4s ease-out all",
+                    })
+            }, 3100 + i * 110)
 
         })
     }, 50);

@@ -41,10 +41,6 @@ body {
     transition: 0.3s ease-in-out top;
 }
 
-#wel .words div:hover {
-    top: -1rem !important;
-}
-
 #wel .words div:nth-child(even) {
     color: #36A2EB;
 }
@@ -164,11 +160,11 @@ body {
     background: #eee;
     cursor: pointer;
     overflow: hidden;
-    border-bottom: 4px solid #eee;
+    border-bottom: 2px solid #eee;
 }
 
 .test .heading {
-    border-bottom: 4px solid #36A2EB;
+    border-bottom: 2px solid #36A2EB;
 }
 
 .item .heading:hover::after {
@@ -287,7 +283,7 @@ body {
 
 .heading {
     padding: 10px;
-    font-weight: 600;
+    font-weight: 400;
     color: rgb(56, 56, 56);
     font-size: 20px;
 }
@@ -767,10 +763,10 @@ on #pointer:before */
 
 .warning {
     background: #eee;
-    border-bottom: 4px solid #36A2EB;
+    border-bottom: 2px solid #36A2EB;
     text-align: center;
     padding: 15px 10px;
-    font-weight: 600;
+    font-weight: 400;
 }
 
 .item__full {
@@ -781,4 +777,17 @@ on #pointer:before */
     height: 2px;
     width: 100%;
     background: #d3d3d3;
+}
+
+
+@media only screen and (hover: none) {
+    .divider {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(255, 255, 255, 1) inset;
+    }
+    
+    .divider::after, .divider::before {
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
