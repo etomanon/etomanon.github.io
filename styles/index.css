@@ -313,6 +313,7 @@ a {
     min-width: 100%;
     min-height: 100%;
     background: url("../img/wall.jpg") no-repeat;
+    background-size: cover;
     z-index: -1;
 }
 
@@ -353,7 +354,7 @@ a {
 
 .owl-carousel .heading {
     color: #444;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 1px;
     background: #fff;
     transition: 3s ease all;
@@ -791,3 +792,6 @@ on #pointer:before */
         transform: translate(-50%, -50%);
     }
 }
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
