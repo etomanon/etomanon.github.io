@@ -343,7 +343,7 @@ a {
     width: 90%;
     filter: grayscale(100%);
     transform: scale(0);
-    transition: 3s ease all;
+    transition: transform 1s ease, filter 1s ease;
     font-family: 'object-fit: contain;';
 }
 
