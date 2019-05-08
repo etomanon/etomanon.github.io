@@ -1,1 +1,0 @@
-var d2_casData = {"type":"FeatureCollection","totalFeatures":1,"features":[{"type":"Feature","id":"d2_cas.fid--c109b3_15b8aa77805_-5f49","geometry":null,"properties":{"id":1,"stav_cas":"2017-04-20T09:19:59.517Z"}}],"crs":null}
